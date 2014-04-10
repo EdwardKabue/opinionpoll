@@ -1,0 +1,34 @@
+<h1>Why haven't I finished my jumpstart labs?</h1>
+<%= form_for(@vote) do |f| %>
+  <% if @vote.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@vote.errors.count, "error") %> prohibited this vote from being saved:</h2>
+
+      <ul>
+      <% @vote.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :answer  %><br>
+    <%= f.radio_button 'answer', 'I am lazy' %>I am lazy<br>
+     <%= f.label :answer %><br>
+    <%= f.radio_button 'answer', 'They are hard' %>They are hard<br>
+    <%= f.label :answer %><br>
+    <%= f.radio_button 'answer', 'I am not motivated' %>I am not motivated<br>
+     <%= f.label :answer %><br>
+    <%= f.radio_button 'answer', "I can't multitask with torrenting" %>I can't multitask with torrenting<br>
+     <%= f.label :answer %><br>
+    <%= f.radio_button 'answer', "I don't think it will help me" %>I don't think it will help me<br>
+    <%= f.label :answer %><br>
+    <%= f.radio_button 'answer', "I am overwhelmed" %>I am overwhelmed<br>
+    <%= f.label :answer %><br>
+    <%= f.radio_button 'answer', "I can't do it alone" %>I can't do it alone
+    </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
